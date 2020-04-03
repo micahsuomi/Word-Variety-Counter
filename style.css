@@ -1,0 +1,206 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.wrapper {
+    position: relative;
+    min-height: 100%;
+    overflow: hidden;
+} 
+
+
+body, button, input, textarea {
+    font-family: 'Montserrat', sans-serif;
+
+
+}
+
+.title {
+    text-align: center;
+    color: white;
+    text-shadow: rgb(83, 54, 110);
+}
+
+.word-text {
+    color: rgb(112, 17, 76);
+    font-size: 40px;
+}
+.container {
+    padding: 3rem 4rem;
+    background-image: linear-gradient(to right, rgba(131, 67, 233, 0.7) 0%, rgba(56, 124, 249, 0.8) 100%);
+}
+.textarea-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.total-words-paragraph {
+    text-align: center;
+    font-size: 18px;
+    color: rgb(45, 26, 58);
+    margin-top: 1rem;
+}
+.textarea {
+    height: 19rem;
+    width: 40rem;
+    font-size: 16px;
+    border: none;
+    border-radius: 3px;
+    padding: .8rem;
+
+}
+
+.button-wrapper {
+    display: flex;
+    justify-content: flex-end;
+}
+.count-words-btn {
+    width: 10rem;
+    padding: 1rem;
+    border-radius: 3px;
+    margin-top: 1.9rem;
+    cursor: pointer;
+    border: none;
+    text-transform: uppercase;
+    border: 2px solid rgb(238, 60, 143);
+    font-weight: 700;
+    background-image: linear-gradient(to right, rgba(131, 67, 233, 0.7) 0%, rgba(56, 124, 249, 0.8) 100%);
+    background-color: none;
+    
+    
+}
+
+.count-words-btn:hover {
+    border: none;
+    background-color: rgb(238, 60, 143);
+    color: white;
+
+
+}
+
+.count-words-btn:focus {
+    outline: none;
+}
+
+/* variety of words */
+
+.words-variety__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 1rem 2rem;
+    
+
+}
+.variety-word__container {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.percentage {
+    font-size: 39px;
+    color: orange;
+    font-weight: 700;
+    margin: .5rem;
+    margin-top: 1rem;
+
+
+}
+
+.total-words {
+    color: rgb(28, 7, 85);
+    font-size: 24px;
+}
+.total {
+    color: rgb(162, 0, 255);
+    font-size: 21px;
+}
+
+/* longest words */
+.longest-words__wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.longest-word-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(97, 32, 151, 0.6);
+    border-radius: 50%;
+    margin:1rem;
+    text-align: center;
+}
+
+.longest-word-container:first-child {
+    background-color: orange;
+    width: 12rem; 
+    height: 12rem;
+
+
+}
+
+.longest-word-container:nth-child(2) {
+    background-color: lightgreen;
+    width: 11rem; 
+    height: 11rem;
+}
+
+
+.longest-word-container:last-child {
+    width: 10rem; 
+    height: 10rem;
+
+    
+}
+
+.longest-word,
+.longest-word__length {
+    font-size: 19px;
+    color: white;
+
+}
+
+.result-container {
+    padding: 2rem 4rem;
+}
+
+.words-container {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border: 1px solid rgba(28, 132, 136, 0.2);
+    background-color: rgba(169, 240, 216, 0.9);
+    padding: 1.8rem;
+    border-radius: 5px;
+}
+
+.words-container, 
+.count-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.wordCountedText {
+    margin-left: 10 rem;
+}
+.count {
+    color: rgb(77, 70, 70);
+    font-weight: 700;
+}
+
+.sort-words {
+    padding: 1.2rem;
+    background-color: orangered;
+}
+

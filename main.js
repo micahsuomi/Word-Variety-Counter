@@ -2,9 +2,10 @@ const form = document.querySelector('.form');
 const textArea = document.querySelector('.textarea');
 const countWordsBtn = document.querySelector('.count-words-btn');
 const totalWords = document.querySelector('.total-words-paragraph');
-const longestWordsTitle = document.querySelector('.longest-words-title');
+const longestWordsTitle = document.querySelector('.longest-words__title');
 const longestWordsWrapper = document.querySelector('.longest-words__wrapper');
 const varietyWordsWrapper = document.querySelector('.words-variety__wrapper');
+const mostFrequentWordsTitle = document.querySelector('.words-counted__title');
 const wordsWrapper = document.querySelector('.words-counted__wrapper');
 
 
@@ -58,6 +59,7 @@ const testWords = () => {
     let varietyContent = '';
     let contentWordsCounted = '';
     longestWordsTitle.textContent = 'Longest Words';
+    mostFrequentWordsTitle.textContent = 'Most Frequent Words';
 
     wordsWrapper.append(sortWordDiv);
 
@@ -157,9 +159,10 @@ const testWords = () => {
 
 
 countWordsBtn.addEventListener('click', () => {
-    if(textArea.value.length === 0) {
+
+    if(textArea.value.length < 1) {
         wordsWrapper.textContent = "";
-        totalWords.textContent = `Please input a text to continue`;
+        totalWords.textContent = `Please input some text`;
         totalWords.style.color = `rgb(255, 81, 0)`;
         totalWords.style.fontSize = '20px';
     } else {

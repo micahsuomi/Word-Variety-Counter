@@ -129,6 +129,7 @@ body, button, input, textarea {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    margin-top: 1rem;
 }
 
 .longest-word-container {
@@ -161,6 +162,13 @@ body, button, input, textarea {
     width: 10rem; 
     height: 10rem;
 
+    
+}
+
+.longest-words__title,
+.words-counted__title {
+    text-transform: uppercase;
+    margin-top: 2rem;
     
 }
 
@@ -204,3 +212,54 @@ body, button, input, textarea {
     background-color: orangered;
 }
 
+@media screen and (max-width: 768px) {
+    .result-container {
+        padding: 2rem 0;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .container {
+        padding: 2rem 1rem;
+    }
+
+    .title {
+        font-size: 25px;
+    }
+
+    .word-text {
+        font-size: 33px;
+    }
+    .percentage {
+    font-size: 31px;
+   
+}
+
+    .textarea {
+        height: 17rem;
+        width: 22rem;
+        font-size: 14px;
+    }
+
+    .longest-word-container:first-child,
+    .longest-word-container:nth-child(2),
+    .longest-word-container:last-child {
+        width: 9rem;
+        height: 9rem;
+        border-radius: 5px;
+    }
+
+    
+    .longest-words__wrapper {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 2rem;
+    }
+}
+
+@media screen and (max-width: 320px) {
+        .textarea {
+            width: 19rem;
+        }
+}

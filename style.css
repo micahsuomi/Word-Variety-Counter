@@ -107,7 +107,7 @@ body, button, input, textarea {
 
 .percentage {
     font-size: 39px;
-    color: orange;
+    color: rgb(0, 60, 255);
     font-weight: 700;
     margin: .5rem;
     margin-top: 1rem;
@@ -122,6 +122,12 @@ body, button, input, textarea {
 .total {
     color: rgb(162, 0, 255);
     font-size: 21px;
+}
+
+.total-palindromes {
+    font-weight: 700;
+    color: rgba(97, 32, 151, 0.6);
+    font-size: 26px;
 }
 
 /* longest words */
@@ -178,6 +184,14 @@ body, button, input, textarea {
     color: white;
 
 }
+
+.palindromes-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* most frequent words */
 
 .result-container {
     padding: 2rem 4rem;

@@ -4,6 +4,7 @@ const countWordsBtn = document.querySelector('.count-words-btn');
 const totalWords = document.querySelector('.total-words-paragraph');
 const longestWordsTitle = document.querySelector('.longest-words__title');
 const longestWordsWrapper = document.querySelector('.longest-words__wrapper');
+const palindromesWrapper = document.querySelector('.palindromes__wrapper');
 const varietyWordsWrapper = document.querySelector('.words-variety__wrapper');
 const mostFrequentWordsTitle = document.querySelector('.words-counted__title');
 const wordsWrapper = document.querySelector('.words-counted__wrapper');
@@ -34,10 +35,8 @@ const checkWordsVariety = (paragraphToArr) => {
     console.log(paragraphToArr)
     let words = paragraphToArr;
     let outputArr = [];
-    let value
     //we check the variety of text
         for(const word of words) {
-            console.log(word)
             //we check if the word is not repeated, if it exists only one it will return an index of -1, //if it does exist after returning -1 it will return its own index
             if(outputArr.indexOf(word.toLowerCase()) === -1) {
              //we push the words without duplicates into a new array
@@ -45,8 +44,32 @@ const checkWordsVariety = (paragraphToArr) => {
          }
 
         }
-        console.log(outputArr)
         return outputArr    
+    
+}
+
+const findPalindromes = (paragraphToArr) => {
+    let palindromesArr = []
+
+    console.log(paragraphToArr)
+    for(const word of paragraphToArr) {
+        let reversedArr = []
+        let splittedWord = word.split('')
+        let reversedWord
+        while(splittedWord.length) {
+            reversedArr.push(splittedWord.pop())
+            reversedWord = reversedArr.join('')          
+        }
+        if(reversedWord === word && reversedWord.length > 1) {
+            palindromesArr.push(word)
+           
+        } 
+
+
+    }
+    console.log(palindromesArr)
+    return palindromesArr;
+
     
 }
 
@@ -55,9 +78,11 @@ const testWords = () => {
     totalWords.textContent = '';
     varietyWordsWrapper.textContent = '';
     longestWordsWrapper.textContent = '';
+    palindromesWrapper.textContent = '';
     let contentLongestWords = '';
     let varietyContent = '';
     let contentWordsCounted = '';
+    let palindromesContent = '';
     longestWordsTitle.textContent = 'Longest Words';
     mostFrequentWordsTitle.textContent = 'Most Frequent Words';
 
@@ -86,16 +111,23 @@ const testWords = () => {
   
         }
 
+
         //calls the function to check variety of words and displays it
         
         let result = checkWordsVariety(paragraphToArr);
         let varietyPercentage = Math.round((result.length / paragraphToArr.length) * 100);
+        let palindromesArr = findPalindromes(paragraphToArr);
 
         varietyContent +=
         `<div class="variety-word__container">
             <p>Words without duplicates: <span class="total">${result.length}</span></p>
             <p>Variety: <span class="percentage"> ${varietyPercentage}%</span></p>
 
+        </div>`
+
+        palindromesContent +=
+        `<div class="palindromes__container">
+        <p>Number of Palindromes: <span class="total-palindromes">${palindromesArr.length}</span>: ${palindromesArr.join(', ')}</p>
         </div>`
 
 
@@ -122,7 +154,7 @@ const testWords = () => {
                     contentLongestWords += 
                     `<div class="longest-word-container">
                         <p class="longest-word">${word}</p>
-                        <p class="longest-word__length">Length: ${len} characters</p>
+                        <p class="longest-word__length"> ${len} characters</p>
                     </div>`
 
 
@@ -151,6 +183,7 @@ const testWords = () => {
 
     longestWordsWrapper.innerHTML = contentLongestWords
     varietyWordsWrapper.innerHTML = varietyContent;
+    palindromesWrapper.innerHTML = palindromesContent;
     wordsWrapper.innerHTML = contentWordsCounted;
     totalWords.innerHTML = `<p>Total words: <span class="total-words"> ${paragraphToArr.length}</span></p>`;
   
